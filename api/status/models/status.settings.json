@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statuses",
+  "info": {
+    "name": "Status",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "online": {
+      "type": "integer"
+    },
+    "user": {
+      "via": "status",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -2,31 +2,63 @@
   "kind": "collectionType",
   "collectionName": "orders",
   "info": {
-    "name": "Order"
+    "name": "Order",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
-    "total": {
-      "type": "decimal"
+    "name": {
+      "type": "string"
     },
-    "products": {
-      "via": "orders",
-      "collection": "product",
-      "dominant": true
+    "status": {
+      "type": "string"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "totalAmount": {
+      "type": "integer"
+    },
+    "datatime": {
+      "type": "datetime"
+    },
+    "address": {
+      "model": "adress"
     },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
-      "via": "order"
+      "via": "orders"
     },
-    "shipping": {
-      "model": "shipping"
+    "description": {
+      "type": "text"
     },
-    "payment": {
-      "model": "payment"
+    "userworker": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "currency": {
+      "model": "currency"
+    },
+    "workercount": {
+      "type": "integer"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "successfulColor",
+        "waringColor"
+      ]
+    },
+    "code": {
+      "type": "uid"
+    },
+    "workerhour": {
+      "type": "integer"
     }
   }
 }

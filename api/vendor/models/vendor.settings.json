@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "name": "Vendor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "featureImage": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "minimumOrder": {
+      "type": "integer"
+    },
+    "deliveryFee": {
+      "type": "integer"
+    },
+    "deliveryRange": {
+      "type": "integer"
+    },
+    "cuisines": {
+      "type": "string"
+    }
+  }
+}
