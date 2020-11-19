@@ -6,6 +6,7 @@
     "description": ""
   },
   "options": {
+    "draftAndPublish": false,
     "timestamps": true
   },
   "attributes": {
@@ -37,6 +38,11 @@
       "configurable": false,
       "private": true
     },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
     "confirmed": {
       "type": "boolean",
       "default": false,
@@ -53,17 +59,40 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "displayName": {
-      "type": "string",
-      "required": true
+    "phone": {
+      "type": "string"
     },
-    "order": {
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "token": {
+      "type": "string"
+    },
+    "tokenType": {
+      "type": "string"
+    },
+    "orders": {
       "via": "user",
-      "model": "order"
+      "collection": "order"
     },
-    "posts": {
-      "via": "users_permissions_user",
-      "collection": "post"
+    "usertype": {
+      "type": "enumeration",
+      "enum": [
+        "customer",
+        "worker"
+      ]
+    },
+    "status": {
+      "model": "status",
+      "via": "user"
     }
   }
 }
